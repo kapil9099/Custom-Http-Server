@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom HTTP Server</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title animate-pop">Welcome to Kapil's Funky HTTP Server!</h1>
+        <p class="description">This server is rocking some cool animations and interactivity.</p>
+        
+        <div class="form-container">
+            <form action="/submit" method="POST" class="animate-fade-in">
+                <label for="name">Your Funky Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                <br>
+                <label for="email">Your Groovy Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <br>
+                <button type="submit" class="btn funky-btn">Submit</button>
+            </form>
+        </div>
+
+        <div class="result">
+            {% if name %}
+                <p class="animate-pop">Hello, {{ name }}!</p>
+                <p class="animate-pop">We've sent an email to {{ email }}.</p>
+            {% endif %}
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
+
